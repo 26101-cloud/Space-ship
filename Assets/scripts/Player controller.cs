@@ -20,9 +20,18 @@ public class Playercontroller : MonoBehaviour
         float move = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(move * speed, 0f);
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+
         if (transform.position.x < -3f)
+        {
             transform.position = new Vector2(3f, transform.position.y);
+        }
         else if (transform.position.x > 3f)
+        {
             transform.position = new Vector2(-3f, transform.position.y);
+        }
     }
 }
