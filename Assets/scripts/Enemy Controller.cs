@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerHealth>().TakeDamage(1);
+            
             Destroy(gameObject);
         } 
     }
