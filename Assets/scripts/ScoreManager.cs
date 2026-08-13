@@ -15,6 +15,11 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     int score = 0;
 
+    private void Start()
+    {
+        scoreText.text = "Score : " + score;
+    }
+
     void Awake()
     {
         Instance = GetComponent<ScoreManager>();
@@ -30,5 +35,6 @@ public class ScoreManager : MonoBehaviour
         //   D) scoreText.text = "Score : " + pts;
         // ✍️ เขียนคำตอบแทนบรรทัดด้านล่าง:
         /* TODO */
+        score += pts; scoreText.text = "Score : " + score;
     }
 }
