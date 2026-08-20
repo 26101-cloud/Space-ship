@@ -22,7 +22,14 @@ public class MainMenuManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("GameScene");
+
     }
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+    }
+
 
     public void QuitGame()
     {
