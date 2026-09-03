@@ -17,15 +17,25 @@ public class MainMenuManager : MonoBehaviour
     //   D) public void StartGame() { Destroy(gameObject); }
     // ✍️ เขียนฟังก์ชันแทนบรรทัดด้านล่าง:
     /* TODO */
-    public void StartGame() { SceneManager.LoadScene("GameScene"); }
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic("BackgroundMusic");
+    }
+    public void StartGame() 
+    {
+        SoundManager.Instance.PlayEffect("ClickSound");
+        SceneManager.LoadScene("GameScene"); 
+    }
 
     public void RestartGame()
     {
+        SoundManager.Instance.PlayEffect("ClickSound");
         SceneManager.LoadScene("GameScene");
 
     }
     public void MainMenuButton()
     {
+        SoundManager.Instance.PlayEffect("ClickSound");
         SceneManager.LoadScene("MainMenu");
 
     }
